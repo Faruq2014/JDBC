@@ -30,7 +30,8 @@ public class Default_Date {
 				String fulnmae= rs.getString(3)+rs.getString(2);
 				java.sql.Date dob= rs.getDate(5);
 				Date enroll= rs.getDate(6);
-			System.out.println( fulnmae+dob+"  "+enroll);	
+			System.out.println( fulnmae+dob+"  "+enroll);
+			con.close();
 
 	}
 

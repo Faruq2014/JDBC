@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-public class SDF_Date_MonthName {
+public class SDF_Convert_DateTo_String_Format {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		 String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";  // became constant
@@ -26,14 +26,9 @@ public class SDF_Date_MonthName {
 			System.out.println("Connected");
 			preStmt=con.prepareStatement("select * from Students where lastname=?" );
 			preStmt.setString(1, "Molla");
-			rs=preStmt.executeQuery();
-			
-			SimpleDateFormat sdf= new SimpleDateFormat ("MMMM-dd-yyyy");
-			/*MM must be uppercase
-			 * MM=digit such as 01,02 
-			 * MMM= letter such as jan, Feb
-			 * MMMM= full month such as January, February
-			*you can create any combination of date format such as 
+			rs=preStmt.executeQuery(); 
+			SimpleDateFormat sdf= new SimpleDateFormat ("MM-dd-yyyy");//MM must be uppercase
+			/*you can create any combination of date format such as 
 			 * MM-dd-yyyy
 			 * dd-MM-yyyy
 			 * yyyy-dd-MM

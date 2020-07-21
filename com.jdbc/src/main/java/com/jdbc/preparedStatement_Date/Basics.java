@@ -1,6 +1,10 @@
 	package com.jdbc.preparedStatement_Date;
 
 public class Basics {
+	
+	// it is not recommended insert date value in string form. Because it will very 
+	// Difficult to do comparison date function.
+	
 		//in java how many date classes are available  ??
 		
 	/*
@@ -47,6 +51,12 @@ public class Basics {
 			 * System.out.println(Sdob);	
 				 */
 		
-		
+		public static void main(String[] args) {
+			java.util.Date Udate = new java.util.Date();
+			System.out.println("Utill Date is :  " + Udate);
+			Long l = Udate.getTime();
+			java.sql.Date Sdate = new java.sql.Date(l);
+			System.out.println("SQL date is  : " + Sdate);
+		}
 		
 	}

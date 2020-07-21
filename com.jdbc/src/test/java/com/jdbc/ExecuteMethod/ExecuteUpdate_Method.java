@@ -1,11 +1,11 @@
-package com.jdbc.SimpleStatement;
+package com.jdbc.ExecuteMethod;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Update {
+public class ExecuteUpdate_Method {
 	static String  url="jdbc:sqlserver://DESKTOP-INQUNRP\\MSSQLSERVER;"+"databaseName=FaruqAcademy;";
 	static String user="Faruq";
 	static String password="1234";
@@ -16,8 +16,9 @@ public class Update {
      Statement stmt=con.createStatement();
      String update="update Students set firstname= 'Faiza' where studentId=4";
      
-     stmt.executeUpdate(update);
+    int result= stmt.executeUpdate(update);
      System.out.println("update complete");
+     System.out.println("how many rows affected :"+ result);
      con.close();
 	}
 
