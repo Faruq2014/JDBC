@@ -19,7 +19,8 @@ public class StoreProcedure_IN {
 		//System.out.println(cst.getString(1));
 
 		
-		  ResultSet rs= cst.getResultSet(); while(rs.next()) { System.out.println(
+		  ResultSet rs= cst.getResultSet();
+		  while(rs.next()) { System.out.println(
 		  "     Id>>>      " + rs.getInt("studentId") + "   firstname>> " +
 		  rs.getString("firstname") + "   lastname>>  " + rs.getString("lastname") +
 		  "   phone >>    " + rs.getString("phone") + "   dob >>    " +

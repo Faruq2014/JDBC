@@ -34,14 +34,14 @@ public class UserHome extends JFrame {
     }
 
     public UserHome() {
-
+              //default constructor
     }
 
     /**
      * Create the frame.
      */
     public UserHome(String userSes) {
-
+                //user define constructor.
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1014, 597);
         setResizable(false);

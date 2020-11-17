@@ -21,7 +21,12 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class UserLogin extends JFrame {
-
+/*
+ * The serialization runtime associates with each serializable class a version number,
+ *  called a serialVersionUID, which is used during deserialization to verify that the sender
+ *   and receiver of a serialized object have loaded classes for that object that are compatible with 
+ *   respect to serialization.
+ */
     private static final long serialVersionUID = 1L;
     private JTextField textField;
     private JPasswordField passwordField;
@@ -46,12 +51,14 @@ public class UserLogin extends JFrame {
     }
 
     /**
-     * Create the frame.
+     * Create the frame by using constructor
      */
     public UserLogin() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1014, 597);
-        setResizable(false);
+       // setBounds(250, 190, 1014, 597);
+        setResizable(true);   // we can resize with cursor.
+       // setResizable(false);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

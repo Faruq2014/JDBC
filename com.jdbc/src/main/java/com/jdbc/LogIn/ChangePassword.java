@@ -40,7 +40,7 @@ public class ChangePassword extends JFrame {
     }
 
     /**
-     * Create the frame.
+     * Create the frame, by user define constructor
      */
     public ChangePassword(String name) {
         setBounds(450, 360, 1024, 234);

@@ -1,4 +1,4 @@
-package com.jdbc.SimpleStatement;
+package com.jdbc.SimpleStatement_Aggregation;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Select {
+public class Max {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
+
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // sql server driver code
 
@@ -18,19 +19,23 @@ public class Select {
 			String password = "1234";
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement stmt = con.createStatement();
-			String select = "SELECT * FROM Students";
+			String select = " select studentId, max(courseFee) as MaximumFee \r\n" + 
+					"  from Course\r\n" + 
+					"  group by studentId";
 			ResultSet rs = stmt.executeQuery(select);
 			while (rs.next()) {
-				System.out.println(rs.getString("firstname") + " " + rs.getString("lastname"));
+				System.out.println("Student ID is: "+rs.getInt("studentId")+" MaximumFee is:  "+rs.getDouble("MaximumFee"));
 
 		}
 		con.close();			
 				
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 				
 				
+
+	
 
 	}
 

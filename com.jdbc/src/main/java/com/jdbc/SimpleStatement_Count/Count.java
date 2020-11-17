@@ -1,4 +1,4 @@
-package com.jdbc.SimpleStatement;
+package com.jdbc.SimpleStatement_Count;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Select {
+
+public class Count {
 
 	public static void main(String[] args) throws SQLException {
 		try {
@@ -18,10 +19,13 @@ public class Select {
 			String password = "1234";
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement stmt = con.createStatement();
-			String select = "SELECT * FROM Students";
+			String select = "SELECT COUNT(*)\r\n" + 
+					"	  FROM    [FaruqAcademy].[dbo].[SSISBTteam]\r\n" + 
+					"	  AS Total_Players";
+			
 			ResultSet rs = stmt.executeQuery(select);
 			while (rs.next()) {
-				System.out.println(rs.getString("firstname") + " " + rs.getString("lastname"));
+				System.out.println("Total count is>>>   "+ rs.getInt(1));
 
 		}
 		con.close();			

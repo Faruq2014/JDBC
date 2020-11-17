@@ -1,4 +1,4 @@
-package com.jdbc.SimpleStatement;
+package com.jdbc.SimpleStatement_Aggregation;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Select {
+public class Join_Sum_GroupBy {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
+
+
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // sql server driver code
 
@@ -18,19 +20,24 @@ public class Select {
 			String password = "1234";
 			Connection con = DriverManager.getConnection(url, user, password);
 			Statement stmt = con.createStatement();
-			String select = "SELECT * FROM Students";
-			ResultSet rs = stmt.executeQuery(select);
+			String query1 =" select  sum(courseFee) as total from Students full outer join Course on Students.studentId=Course.studentId group by Students.studentId;";
+			String query2 = "select sum(courseFee) as total from Students full outer join Course on Students.studentId=Course.courseId group by Course.courseId";
+			ResultSet rs = stmt.executeQuery(query2);
 			while (rs.next()) {
-				System.out.println(rs.getString("firstname") + " " + rs.getString("lastname"));
+				System.out.println(" Total due is:  "+rs.getDouble("total"));
 
 		}
 		con.close();			
 				
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 				
 				
+
+	
+
+	
 
 	}
 
