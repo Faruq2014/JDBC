@@ -19,7 +19,7 @@ public class Insert {
 			+
 			"(lastname,firstname, phone,dob,enrolldate)"
 			+
-			"values('Bhuiyan','Habib','9176225008','04/04/1978','06/25/2020')";
+			"values('Khandoker','Anik','7036225008','04/04/2008','03/03/2022')";
 			
 			stmt.executeUpdate(insert);
 			System.out.println("insert complete");

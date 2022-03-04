@@ -13,7 +13,6 @@ public class Select {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // sql server driver code
 
 			String url = "jdbc:sqlserver://DESKTOP-INQUNRP\\MSSQLSERVER;" + "databaseName=FaruqAcademy;";
-
 			String user = "Faruq";
 			String password = "1234";
 			Connection con = DriverManager.getConnection(url, user, password);

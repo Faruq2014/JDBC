@@ -6,7 +6,7 @@ public class CursorConcept {
 		/*
 		 * After executing the sql query the result will be stored a special memory of 
 		 * database software, called Context area. To access context area and access result set 
-		 * organizly Cursor concept is present in the database. In Java there are three types 
+		 * organialy Cursor concept is present in the database. In Java there are three types 
 		 * of cursor such as enumeration, iterator and list iterator. 
 		 * in jdbc there are two types of cursor.
 		 * Implicit cursor and explicit cursor.
